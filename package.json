@@ -1,0 +1,16 @@
+{
+  "name": "hamburger.js",
+  "version": "0.9",
+  "description": "A css-only button that animates from a hamburger-icon to a cross-icon.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2"
+  }
+}

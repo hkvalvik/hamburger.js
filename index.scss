@@ -1,0 +1,103 @@
+$hamburger-width: 30px !default;
+$hamburger-bar-height: 2px !default;
+$hamburger-bar-gap: 7px !default;
+$hamburger-transition-duration: .2s !default;
+$hamburger-transition-timing-function: ease-in-out !default;
+$hamburger-icon-margin-right: 0 !default;
+
+.hamburger {
+  position: relative;
+  margin: 0;
+  padding: 13px 14px 13px 14px;
+  border: none 0;
+  background: none;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+  transition: color $hamburger-transition-duration $hamburger-transition-timing-function;
+
+  &,
+  * {
+    box-sizing: border-box;
+
+    &:before,
+    &:after {
+      box-sizing: border-box;
+    }
+  }
+
+  // Hamburger icon
+
+  &-icon {
+    margin-right: $hamburger-icon-margin-right;
+
+    &,
+    &:after,
+    &:before {
+      height: $hamburger-bar-height;
+      border-style: solid;
+      border-width: 0 $hamburger-width 0 0;
+      border-radius: 1px;
+    }
+
+    & {
+      position: relative;
+      top: -4px;
+      display: inline-block;
+      width: $hamburger-width;
+      will-change: background-color;
+      transition: border-color
+      $hamburger-transition-duration
+      $hamburger-transition-timing-function
+      $hamburger-transition-duration;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      transform-origin: center center;
+      will-change: top, bottom, transform;
+      transition: top $hamburger-transition-duration $hamburger-transition-timing-function $hamburger-transition-duration,
+      bottom $hamburger-transition-duration $hamburger-transition-timing-function $hamburger-transition-duration,
+      transform $hamburger-transition-duration $hamburger-transition-timing-function;
+    }
+
+    &:before {
+      top: -($hamburger-bar-height + $hamburger-bar-gap);
+    }
+
+    &:after {
+      bottom: -($hamburger-bar-height + $hamburger-bar-gap);
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  // Switch to cross
+
+  &--on {
+    .hamburger-icon {
+      border-color: rgba(white, 0);
+
+      &:before,
+      &:after {
+        transition: top $hamburger-transition-duration $hamburger-transition-timing-function,
+        bottom $hamburger-transition-duration $hamburger-transition-timing-function,
+        transform $hamburger-transition-duration $hamburger-transition-timing-function $hamburger-transition-duration;
+      }
+
+      &:before {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+
+      &:after {
+        bottom: 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

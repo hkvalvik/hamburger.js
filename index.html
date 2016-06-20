@@ -1,0 +1,32 @@
+<html>
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+<div>
+    <button class="hamburger" data-hamburger aria-label="Menu">
+        <span class="hamburger-icon"></span>
+    </button>
+</div>
+<div>
+    <button class="hamburger" data-hamburger>
+        Menu
+        <span class="hamburger-icon"></span>
+    </button>
+</div>
+<div>
+    <button class="hamburger" data-hamburger>
+        <span class="hamburger-icon"></span>
+        Menu
+    </button>
+</div>
+<script>
+    var buttons = document.querySelectorAll('[data-hamburger]');
+    for(var i=0; i<buttons.length; i++){
+        var button = buttons[i];
+        var hamburger = new Hamburger(button);
+    }
+</script>
+</body>
+</html>
