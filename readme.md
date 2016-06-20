@@ -41,7 +41,7 @@
 
 ## Using sass?
 
-See [index.scss](node_modules/hamburger.js/index.scss) for available options
+See [index.scss](index.scss) for available options
 
     @import "node_modules/hamburger.js/index.scss";
 
